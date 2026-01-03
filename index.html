@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Stream | 極速影片下載器</title>
+    <meta name="description" content="高品質 YouTube 影片下載，極速、免費、無廣告。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <main class="container">
+        <header>
+            <div class="logo">
+                <span class="icon">⚡</span> Infinity Stream
+            </div>
+            <p class="subtitle">釋放您的影音體驗，一鍵獲取高畫質內容。</p>
+        </header>
+
+        <div class="glass-card input-section">
+            <form id="downloadForm">
+                <div class="input-group">
+                    <input type="url" id="videoUrl" placeholder="貼上 YouTube 影片網址..." required autocomplete="off">
+                    <button type="submit" id="submitBtn">
+                        <span class="btn-text">分析影片</span>
+                        <div class="loader hidden"></div>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="resultSection" class="result-section hidden">
+            <!-- 這裡將由 JS 動態插入內容 -->
+        </div>
+
+        <footer>
+            <p>Powered by yt-dlp & Netlify Functions. 僅供個人學習使用。</p>
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
