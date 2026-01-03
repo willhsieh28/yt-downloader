@@ -1,4 +1,2 @@
 [build]
-  command = "echo 'Building Python Functions'"
   publish = "public"
-  functions = "serverless"
