@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         resultSection.classList.add('hidden');
 
         try {
-            // Call Netlify Function (Direct path)
-            const response = await fetch('/.netlify/functions/dl', {
+            // Call Netlify Function (Standard path)
+            const response = await fetch('/.netlify/functions/api', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
