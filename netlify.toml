@@ -1,2 +1,4 @@
 [build]
+  # 明確指定發布目錄和函數目錄
   publish = "public"
+  functions = "netlify/functions"
