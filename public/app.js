@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Call Netlify Function
-            // 使用相對路徑以確保在不同環境下都能正確指向
-            const response = await fetch('./.netlify/functions/api', {
+            // 透過 netlify.toml 設置的排程，直接呼叫 /api
+            const response = await fetch('/api', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

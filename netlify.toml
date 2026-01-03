@@ -4,3 +4,9 @@
 
 [functions]
   node_bundler = "esbuild"
+
+# 建立一個乾淨的 API 路徑映射
+[[redirects]]
+  from = "/api"
+  to = "/.netlify/functions/api"
+  status = 200
