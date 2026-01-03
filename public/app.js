@@ -18,9 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         resultSection.classList.add('hidden');
 
         try {
-            // Call Netlify Function
-            // 透過 netlify.toml 設置的排程，直接呼叫 /api
-            const response = await fetch('/api', {
+            // Call Netlify Function (Direct path)
+            const response = await fetch('/.netlify/functions/dl', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
