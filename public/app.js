@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Call Netlify Function
-            const response = await fetch('/.netlify/functions/api', {
+            // 使用相對路徑以確保在不同環境下都能正確指向
+            const response = await fetch('./.netlify/functions/api', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
