@@ -72,11 +72,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderResult(data) {
-        const { title, thumbnail, duration, uploader, url } = data;
+        const { title, thumbnail, duration, uploader, download, warning } = data;
 
         // Clean up the structure for clarity
         const card = document.createElement('div');
         card.className = 'glass-card result-card';
+
+        const quality = download?.quality ? `<span>🎞 ${download.quality}</span>` : '';
+        const warningText = warning
+            ? `<p style="margin-top: 10px; font-size: 0.8rem; color: #94a3b8;">${warning}</p>`
+            : '';
 
         card.innerHTML = `
             <div class="thumbnail-wrapper">
@@ -87,11 +92,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="video-meta">
                     <span>👤 ${uploader}</span>
                     <span>⏱ ${duration}</span>
+                    ${quality}
                 </div>
-                <a href="${url}" target="_blank" class="download-link" rel="noopener noreferrer" download="${title}.mp4">
+                <a href="${download.url}" target="_blank" class="download-link" rel="noopener noreferrer" download="${title}.${download.ext || 'mp4'}">
                     <span>⬇ 下載影片</span>
                 </a>
-                <p style="margin-top: 10px; font-size: 0.8rem; color: #94a3b8;">如果點擊無法下載，請右鍵選擇「另存連結為...」或「另存影片」</p>
+                <p style="margin-top: 10px; font-size: 0.8rem; color: #94a3b8;">如果瀏覽器直接開啟影片，可改用右鍵選擇「另存連結為...」。</p>
+                ${warningText}
             </div>
         `;
 
